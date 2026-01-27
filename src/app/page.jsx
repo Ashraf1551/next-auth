@@ -1,3 +1,4 @@
+import LoginButton from "@/components/LoginButton";
 import Link from "next/link";
 import { FaReact } from "react-icons/fa";
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
@@ -21,7 +22,7 @@ export default function Home() {
       </div>
 
       <div className="flex gap-5">
-        <button className="btn">Login</button>
+        <LoginButton></LoginButton>
         <Link href={"/register"} className="btn">
           Register
         </Link>
