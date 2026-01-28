@@ -1,3 +1,4 @@
+import NextAuthProvider from "@/provider/NextAuthProvider";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 const poppins = Poppins({
@@ -6,9 +7,11 @@ const poppins = Poppins({
 
 const RootLayout = ({ children }) => {
   return (
-    <html className={`${poppins.className}`}>
-      <body className="">{children}</body>
-    </html>
+    <NextAuthProvider>
+      <html className={`${poppins.className}`}>
+        <body className="">{children}</body>
+      </html>
+    </NextAuthProvider>
   );
 };
 export default RootLayout;

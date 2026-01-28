@@ -1,12 +1,19 @@
 import LoginButton from "@/components/LoginButton";
+import UserCard from "@/components/UserCard";
+import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { FaReact } from "react-icons/fa";
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
 import { RiNextjsLine } from "react-icons/ri";
 import { SiMongodb } from "react-icons/si";
-export default function Home() {
+import { authOptions } from "./api/auth/[...nextauth]/route";
+
+export default async function Home() {
+  const session = await getServerSession(authOptions);
   return (
     <div className="min-h-screen relative flex flex-col justify-center items-center gap-5 ">
+      <UserCard></UserCard>
+
       <div className=" flex gap-5 space-x-4 items-center">
         <FaReact
           size={40}
@@ -27,6 +34,9 @@ export default function Home() {
           Register
         </Link>
       </div>
+
+      <h2 className="font-bold">User- Client</h2>
+      <div value="border-2 p-4 rounded">{JSON.stringify(session)}</div>
     </div>
   );
 }
