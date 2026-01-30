@@ -1,0 +1,9 @@
+const ForBidden = () => {
+  return (
+    <div>
+      <h2 className="py-20 text-8xl text-center">Forbidden</h2>
+    </div>
+  );
+};
+
+export default ForBidden;
