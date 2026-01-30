@@ -1,7 +1,6 @@
-import LoginButton from "@/components/LoginButton";
+import AuthButton from "@/components/AuthButton";
 import UserCard from "@/components/UserCard";
 import { getServerSession } from "next-auth";
-import Link from "next/link";
 import { FaReact } from "react-icons/fa";
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
 import { RiNextjsLine } from "react-icons/ri";
@@ -28,12 +27,7 @@ export default async function Home() {
         <h2 className="text-5xl">NEXT AUTH</h2>
       </div>
 
-      <div className="flex gap-5">
-        <LoginButton></LoginButton>
-        <Link href={"/register"} className="btn">
-          Register
-        </Link>
-      </div>
+      <AuthButton></AuthButton>
 
       <h2 className="font-bold">User- Client</h2>
       <div value="border-2 p-4 rounded">{JSON.stringify(session)}</div>
