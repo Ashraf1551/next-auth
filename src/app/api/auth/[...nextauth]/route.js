@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
+// name, email, image
 const userList = [
   { name: "hablu", password: "1234" },
   { name: "dablu", password: "5678" },
@@ -28,7 +29,7 @@ export const authOptions = {
         const { username, password, secretCode } = credentials;
 
         // Find User
-        const user = userList.find((u) => u.name == username);
+        const user = userList.find((u) => u.username == username);
         // if !user => err
         if (!user) return null;
 
